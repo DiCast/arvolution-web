@@ -1,0 +1,31 @@
+{
+  "title": "Arvolution at the Manos Tech Venture Summit",
+  "author": "David Mendez",
+  "date": "December 11, 2018",
+  "image": "image.png",
+  "content": "You might want to research for the <pre> tag to render this one properly.",
+  "comments": [{
+    "name": "Jane Doe",
+    "date": "02/11/18",
+    "message": "Interaction design buzz sales startup influencer holy grail branding metrics ecosystem termsheet vesting period. Long tail A/B testing rockstar focus agile development burn rate churn rate paradigm shift growth hacking. Facebook user experience buzz.",
+    "image": "/img/company/equipo/david-m.png"
+  },  {
+    "name": "Johnson Johhenson",
+    "date": "01/12/17",
+    "message": "Bien chida toda la pagina.",
+    "image": "/img/company/equipo/david-j.png"
+  },
+  {
+    "name": "Alexis alias Chico Vodka",
+    "date": "01/12/17",
+    "message": "Donde esta el vodka",
+    "image": "/img/company/equipo/alexis.png"
+  }
+],
+  "relatedPosts": [{
+    "name": "Jane Doe",
+    "date": "02/11/18",
+    "message": "Interaction design buzz sales startup influencer holy grail branding metrics ecosystem termsheet vesting period. Long tail A/B testing rockstar focus agile development burn rate churn rate paradigm shift growth hacking. Facebook user experience buzz.",
+    "image": "image.png"
+  }]
+}

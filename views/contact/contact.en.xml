@@ -1,0 +1,23 @@
+<content>
+  <url>/contact</url>
+  <messageUs>Drop us a message</messageUs>
+  <joinUs>join us</joinUs>
+  <meetUs>or meet us</meetUs>
+  <name>Name</name>
+  <message>Message</message>
+  <phone>phone number</phone>
+  <position>Which position are you interested in?</position>
+  <pos1>Fullstack Developer</pos1>
+  <pos2>Junior Developer</pos2>
+  <pos3>Project Manager</pos3>
+  <pos4>UX/UI Designer</pos4>
+  <posOther>Other</posOther>
+  <positionSelect>Select position</positionSelect>
+  <linkCV>Link to your CV</linkCV>
+  <attachCV>Attach your CV</attachCV>
+  <or>or</or>
+  <linkPortfolio>Link to your Portfolio / Reel</linkPortfolio>
+  <bttnMessage>Send Message</bttnMessage>
+  <bttnApply>Apply</bttnApply>
+  <phoneNo>Phone: 01 55 3020 3426</phoneNo>
+</content>

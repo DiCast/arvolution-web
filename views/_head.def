@@ -1,0 +1,24 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>{{=it.i18n.title}}</title>
+
+<meta name="description" content="We develop creative, impactful solutions for companies to adapt into the world of emerging technologies. We specialize in AR/VR and industry 4.0 solutions.">
+<meta name="keywords" content="VR,AR,Virtual Reality,Realidad Virtual,AR Mexico,VR Mexico,Arvolution,Arvolution Mexico,Enteprise Solutions,Software Development,AR/VR Consultancy">
+
+<meta name="og:title" content="Arvolution">
+<meta property="og:description" content="Developing AR/VR and industry 4.0 solutions." />
+<meta property="og:image" content="https://arvolution.com/img/logo.png" />
+
+
+<!-- icono en la pestaña -->
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+<link rel="stylesheet" type="text/css" href="/application.css">
+<link href="https://fonts.googleapis.com/css?family=Work+Sans:200,300,400,500,600" rel="stylesheet">
+
+<!-- jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- FLICKITY (CAROUSEL) -->
+<link rel="stylesheet" href="/flickity-docs/flickity.css" media="screen">

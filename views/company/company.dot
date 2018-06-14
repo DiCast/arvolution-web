@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  {{#def._head}}
+</head>
+
+<body class="company">
+  <!-- header -->
+  <div>
+    {{#def._header}}
+  </div>
+  <div class="wrapper">
+    <div class="wrapper__full">
+      <img src="/img/company/fondo.png" class="wrapper__full__img-background">
+      <div class="top">
+        <div class="content">
+          <!-- imagen -->
+          <div class="content__image">
+            <img src="/img/company/about-us.png" style="max-width: 100%; height: auto;">
+          </div>
+          <!-- contenido -->
+          <div class="content__text">
+            <p class="title">{{=it.mainTitle}}</p>
+            <p class="text">{{=it.text}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="background">
+        <div class="team">
+          <p class="title">{{=it.team}}</p>
+        </div>
+        <div class="normal">
+          {{~it.data.entries :entry:index}}
+          <div class="normal__news">
+            <div class="normal__news--image">
+              <img id="news-image1" src="{{=entry.image}}">
+              <img id="news-image2" src="{{=entry.hoverImage}}">
+            </div>
+            <div class="normal__news--content">
+              <p class="normal__news--content__title">{{=entry.name}}</p>
+              <p class="normal__news--content__position">{{=entry.position}}</p>
+              <div class="normal__news--content__icons">
+                <div>
+                  <a target="{{=entry.targetT}}" href="{{=entry.twitter}}"><img src="/img/company/twitter2.png" style="max-width: 100%"></a>
+                </div>
+                <div>
+                  <a target="{{=entry.targetL}}" href="{{=entry.linkedin}}"><img src="/img/company/linkedin2.png" style="max-width: 90%"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          {{~}}
+        </div>
+        <div class="bottom-text">
+            <p class="title">{{=it.join}}</p>
+            <a href="#" class="button">{{=it.buttonText}}</a>
+        </div>
+
+        <!-- footer -->
+        <div>
+          {{#def._footer}}
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+
+  </script>
+
+
+</body>
+
+</html>

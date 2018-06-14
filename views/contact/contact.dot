@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  {{#def._head}}
+</head>
+
+<body class="contact">
+  <!-- header -->
+  <div>
+    {{#def._header}}
+  </div>
+  <div class="wrapper">
+    <div class="main-display-full">
+      <div class="place-select">
+        <div class="place-select__dots">
+          <a href="#to_message"><img class="dot-1" src="/img/contact/carousel_3/on-point.png"></a>
+        </div>
+        <div class="place-select__dots">
+          <a href="#to_join"><img class="dot-2" src="/img/contact/carousel_3/off-point.png"></a>
+        </div>
+        <div class="place-select__dots">
+          <a href="#to_meet"><img class="dot-3" src="/img/contact/carousel_3/off-point.png"></a>
+        </div>
+
+      </div>
+      <a id="to_message"></a>
+      <!-- drop a message -->
+      <div class="main-display-reg">
+        <div class="main-display-reg__floor">
+          <img src="/img/index/gradient_1.png" style="">
+        </div>
+        <div class="main-display-reg__content">
+          <div class="main-display-reg__content__image">
+            <img src="/img/contact/message.png" style="">
+          </div>
+          <div class="main-display-reg__content__form" id="message_info">
+            <p class="title">{{=it.messageUs}}</p>
+            <form class="form" action="#" id="usrform">
+              <input class="text" type="text" name="usrname" placeholder="Name"><br>
+              <input class="text" id="emailAddress" type="email" placeholder="Email"><br>
+              <textarea class="text" rows="4" cols="50" name="comment" form="usrform" placeholder="Message"></textarea></br>
+              <input class="submit" type="submit" value="{{=it.bttnMessage}}">
+            </form>
+          </div>
+        </div>
+      </div>
+      <a id="to_join"></a>
+      <!-- Join us -->
+      <div class="join-us">
+        <div class="join-us__form" id="join_info">
+          <p class="title">{{=it.joinUs}}</p>
+          <form class="form" action="#" id="usrform">
+            <input class="text" type="text" name="usrname" placeholder="{{=it.name}}"><br>
+            <input class="text" id="emailAddress" type="email" placeholder="Email"><br>
+            <input class="text" type="tel" placeholder="{{=it.phone}}"><br>
+            <a id="to_join2"></a>
+            <p class="text">{{=it.position}}</p><br>
+            <div class="custom-select">
+              <select>
+                <option value="0">{{=it.positionSelect}}</option>
+                <option value="0">{{=it.pos1}}</option>
+                <option value="1">{{=it.pos2}}</option>
+                <option value="2">{{=it.pos3}}</option>
+                <option value="3">{{=it.pos4}}</option>
+                <option value="4">{{=it.posOther}}</option>
+              </select>
+            </div>
+            <div class="space-between" style="margin-top: 5%">
+              <p class="text">{{=it.linkCV}}</p><br>
+              <p class="text">{{=it.or}}</p><br>
+              <p class="text">{{=it.attachCV}}</p><br>
+            </div>
+            <div class="space-between">
+              <input class="text" type="url"><br>
+              <input type="file" name="file-1[]" id="file-1" class="inputfile inputfile-1" data-multiple-caption="{count} files selected" multiple />
+              <label for="file-1" class="label">
+                  <span>Choose a file&hellip;</span>
+                </label>
+            </div>
+            <p class="text" style="margin-top: 5%">{{=it.linkPortfolio}}</p><br>
+            <input class="text" type="url" style="margin-top: -5%"><br>
+            <input class="apply" type="submit" value="{{=it.bttnApply}}"><br>
+          </form>
+        </div>
+        <div class="join-us__image">
+          <img src="/img/contact/join.png" style="max-width: 100%; height: auto;">
+        </div>
+      </div>
+
+      <a id="to_meet"></a>
+      <!-- Meet us -->
+      <div class="meet">
+        <!-- <div class="meet--floor">
+          <img class="meet--floor__image" src="/img/contact/floor3.png" style="">
+        </div> -->
+        <div class="meet--content">
+          <div class="meet--content__image">
+            <img src="/img/contact/map.png" style="">
+          </div>
+          <div class="meet--content__text">
+            <p class="title">{{=it.meetUs}}</p>
+            <p class="text">Miguel Angel de Quevedo</p>
+            <p class="text">928 int 202</p>
+            <p class="text">Parque San Andrés, Coyoacán</p>
+            <p class="text">04040 CDMX</p><br>
+            <p class="text">{{=it.phoneNo}}</p>
+          </div>
+          <a id="to_meet2"></a>
+        </div>
+      </div>
+
+    </div>
+    <div class="bott-floor">
+      <img class="bott-floor__image" src="/img/contact/floor4.png" style="">
+    </div>
+    <!-- footer -->
+    <div class="footer-div" style="">
+      {{#def._footer}}
+    </div>
+  </div>
+
+  <script>
+    /*choose file (join us)*/
+    var inputs = document.querySelectorAll('.inputfile');
+    Array.prototype.forEach.call(inputs, function(input) {
+      var label = input.nextElementSibling,
+        labelVal = label.innerHTML;
+
+      input.addEventListener('change', function(e) {
+        var fileName = '';
+        if (this.files && this.files.length > 1)
+          fileName = (this.getAttribute('data-multiple-caption') || '').replace('{count}', this.files.length);
+        else
+          fileName = e.target.value.split('\\').pop();
+
+        if (fileName)
+          label.querySelector('span').innerHTML = fileName;
+        else
+          label.innerHTML = labelVal;
+      });
+
+      /*Firefox bug fix*/
+      input.addEventListener('focus', function() {
+        input.classList.add('has-focus');
+      });
+      input.addEventListener('blur', function() {
+        input.classList.remove('has-focus');
+      });
+    });
+
+    /*scroll a la hora de seeccionar el anchor*/
+    $(function() {
+      $('div.place-select__dots a').bind('click', function(event) {
+        var $anchor = $(this);
+        $('html, body').stop().animate({
+          scrollTop: $($anchor.attr('href')).offset().top
+        }, 1000);
+        event.preventDefault();
+      });
+    });
+
+    /*scroll a la hora de seeccionar el anchor*/
+    $(function() {
+      $('div.dropdown-contact.scroll-soft').bind('click', function(event) {
+        var $anchor = $(this);
+        $('html, body').stop().animate({
+          scrollTop: $($anchor.attr('href')).offset().top
+        }, 1000);
+        event.preventDefault();
+      });
+    });
+
+    /*cambio de botones al hacer scroll*/
+    $(window).scroll(function() {
+      document.getElementsByClassName("dot-1")[0].src = '/img/contact/carousel_3/on-point.png';
+      document.getElementsByClassName("dot-2")[0].src = '/img/contact/carousel_3/off-point.png';
+      document.getElementsByClassName("dot-3")[0].src = '/img/contact/carousel_3/off-point.png';
+
+      var hT = $('#to_join2').offset().top,
+        hH = $('#to_join2').outerHeight(),
+        wH = $(window).height(),
+        wS = $(this).scrollTop();
+
+      if (wS > (hT + hH - wH)) {
+        console.log("JOIN");
+        console.log("hT (offset): " + hT);
+        console.log("hH (height): " + hH);
+        console.log("wH (window height): " + wH);
+        console.log("wS (scroll top): " + wS);
+        document.getElementsByClassName("dot-1")[0].src = '/img/contact/carousel_3/off-point.png';
+        document.getElementsByClassName("dot-2")[0].src = '/img/contact/carousel_3/on-point.png';
+        document.getElementsByClassName("dot-3")[0].src = '/img/contact/carousel_3/off-point.png';
+      }
+      var cT = $('#to_meet2').offset().top,
+        cH = $('#to_meet2').outerHeight(),
+        dH = $(window).height(),
+        dS = $(this).scrollTop();
+      if (wS > (cT + cH - dH)) {
+        document.getElementsByClassName("dot-1")[0].src = '/img/contact/carousel_3/off-point.png';
+        document.getElementsByClassName("dot-2")[0].src = '/img/contact/carousel_3/off-point.png';
+        document.getElementsByClassName("dot-3")[0].src = '/img/contact/carousel_3/on-point.png';
+      }
+    });
+  </script>
+</body>
+
+</html>

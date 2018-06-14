@@ -1,0 +1,94 @@
+{
+  "entries": [{
+      "name": "Octavio Jiménez",
+      "position": "Founder & CEO",
+      "image": "/img/company/equipo/octa.png",
+      "hoverImage": "/img/company/equipo/octavio_2.jpg",
+      "twitter": "https://twitter.com/0ctabond",
+      "linkedin": "https://www.linkedin.com/in/octabond/",
+      "targetT": "_blank",
+      "targetL": "_blank"
+    }, {
+      "name": "David Jiménez",
+      "position": "Founder & CTO",
+      "image": "/img/company/equipo/david-j.png",
+      "hoverImage": "/img/company/equipo/davidJ_2.jpg",
+      "twitter": "#null",
+      "linkedin": "#null",
+      "targetT": "_self",
+      "targetL": "_self"
+    }, {
+      "name": "Miguel Novoa",
+      "position": "Founder & COO",
+      "image": "/img/company/equipo/miguel.png",
+      "hoverImage": "/img/company/equipo/miguel_2.jpg",
+      "twitter": "#null",
+      "linkedin": "https://www.linkedin.com/in/miguel-novoa-4b3a61106/",
+      "targetT": "_self",
+      "targetL": "_blank"
+    }, {
+      "name": "Carlos Sánchez",
+      "position": "Founder & CFO",
+      "image": "/img/company/equipo/charlie.png",
+      "hoverImage": "/img/company/equipo/charlie_2.jpg",
+      "twitter": "#null",
+      "linkedin": "https://www.linkedin.com/in/chacharlie/",
+      "targetT": "_self",
+      "targetL": "_blank"
+    }, {
+      "name": "David Méndez",
+      "position": "CMO",
+      "image": "/img/company/equipo/david-m.png",
+      "hoverImage": "/img/company/equipo/davidM_2.jpg",
+      "twitter": "#null",
+      "linkedin": "https://www.linkedin.com/in/dmendezvionet/",
+      "targetT": "_self",
+      "targetL": "_blank"
+    }, {
+      "name": "Diana Castelao",
+      "position": "Digital Artist",
+      "image": "/img/company/equipo/diana.png",
+      "hoverImage": "/img/company/equipo/diana_2.jpg",
+      "twitter": "#null",
+      "linkedin": "https://www.linkedin.com/in/diana-castelao/",
+      "targetT": "_self",
+      "targetL": "_blank"
+    }, {
+      "name": "Oscar Labansat",
+      "position": "Technical Lead",
+      "image": "/img/company/equipo/oscar.png",
+      "hoverImage": "/img/company/equipo/oscar_2.jpg",
+      "twitter": "#null",
+      "linkedin": "https://www.linkedin.com/in/olabansat/",
+      "targetT": "_self",
+      "targetL": "_blank"
+    },  {
+      "name": "Alexis Gómez",
+      "position": "Software Engineer",
+      "image": "/img/company/equipo/alexis.png",
+      "hoverImage": "/img/company/equipo/alexis_2.jpg",
+      "twitter": "#null",
+      "linkedin": "https://www.linkedin.com/in/salvador-alexis-gomez-gonzalez/",
+      "targetT": "_self",
+      "targetL": "_blank"
+    }, {
+      "name": "Fernando Fontecha",
+      "position": "Software Engineer",
+      "image": "/img/company/equipo/fer.png",
+      "hoverImage": "/img/company/equipo/fontecha_2.jpg",
+      "twitter": "#null",
+      "linkedin": "https://www.linkedin.com/in/fernando-fontecha-167997151/",
+      "targetT": "_self",
+      "targetL": "_blank"
+    }, {
+      "name": "Carlos Noguez",
+      "position": "UX Designer",
+      "image": "/img/company/equipo/carlos.png",
+      "hoverImage": "/img/company/equipo/carlos_2.jpg",
+      "twitter": "https://twitter.com/noguezz",
+      "linkedin": "#null",
+      "targetT": "_blank",
+      "targetL": "_self"
+    }
+  ]
+}

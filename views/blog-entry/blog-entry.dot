@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  {{#def._head}}
+</head>
+
+
+<body class="blog-entry">
+  <!-- header -->
+  <div>
+    {{#def._header}}
+  </div>
+  <div class="wrapper">
+    <div class="wrapper__full">
+      <div class="top-section">
+      </div>
+      <div class="middle-section">
+        <div class="heading">
+          <div class="heading--text">
+            <p class="title">Arvolution at the Manos Tech Summit</p>
+            <div class="author-content">
+              <img src="/img/company/equipo/david-m.png">
+              <p class="author">by <span>David Méndez</span></p>
+              <p class="date">December 11, 2018</p>
+            </div>
+          </div>
+          <div class="heading--image">
+            <img src="/img/blog-entry/imagen-muestra.png">
+          </div>
+        </div>
+        <div class="blog-text">
+          <p class="text">
+            On the 7th and 8th December, our CEO Octavio Jiménez and CTO David Jiménez attended the "Manos Tech Venture Summit 2017" at the Google Launchpad in San Francisco. The event takes place every year and their intention is to get together around 200 latino
+            start-ups at the early stages of their development in a collaborative forum, along with investors and mentors, to share their experiences about the promotion of innovation within the hi-tech ecosystem.
+            <br>
+            <br> As well as the success stories bringing a valuable amount of “know-how” for Arvolution, shared by the panel of entrepreneurs and experienced investors of the global technology community, what was really important for us was the company’s
+            opportunity to pitch in front of current investors as one of the 15 best startups in Latin America. These were selected for the impact they have generated on the market thus far, and we were honoured at Arvolution to have been directly invited,
+            without having to take part in the selection process.
+            <br>
+            <br> Among the investors that were present, were big startup accelerators and businesses such as Google ventures, Samsung Ventures, Silicon Valley Bank, Intel Diversity Fund, Andreessen Horowitz and many more (the complete list can be found
+            at the end of the article). This exposure has definitely been very beneficial for Arvolution, as the company is increasingly having a much more international presence and reaching higher levels in the entrepreneurial world.
+            <br>
+            <br> Guests list: GOOGLE VENTURES, SAMSUNG VENTURES, GE VENTURES, INTEL DIVERSITY FUND, SAND HILL ANGELS, SILICON VALLEY BANK, LIGHTSPEED VENTURE PARTNERS, REDPOINT VENTURES, NORWEST VENTURE PARTNERS, 5AM VENTURES, AME CLOUD VENTURES, DCM
+            VENTURES, TRINITY VENTURES, BAND OF ANGELS, MITA VENTURES, TRUE VENTURES, MENLO VENTURES, FOUNDATION CAPITAL, BENCHMARK CAPITAL, CRUNCHFUND, CANAAN PARTNERS, INTERWEST PARTNERS, COMCAST VENTURES, FELICIS VENTURES, DRAPER FISHER JURVETSON,
+            MANOS ANGEL NETWORK, SV ANGELS,ANDREESSEN HOROWITZ,SCALE VENTURE PARTNERS y LEAP GLOBAL PARTNERS.
+          </p>
+        </div>
+        <div class="write-comment">
+          <p class="write-comment__title">Leave a Comment</p>
+          <form action="" method="post" class="write-comment__form">
+            <textarea class="text" name="comment" form="usrform" placeholder="Enter your comment..."></textarea></br>
+            <div class="form-inputs">
+              <input class="text" type="text" name="usrname" placeholder="Name (Required)">
+              <input class="text" id="emailAddress" type="email" placeholder="Email (Required)">
+              <input class="text" id="website" type="url" placeholder="Website">
+            </div>
+            <input class="post-bttn" type="submit" value="post">
+          </form>
+        </div>
+        <div class="comments">
+          {{~it.data.comments :comment}}
+          <div class="comment">
+            <div class="comment__image">
+              <img src="{{=comment.image}}">
+            </div>
+            <div class="comment__content">
+              <div class="comment__content--title">
+                <p class="green-text">{{=comment.name}}</p>
+                <p class="green-text">{{=comment.date}}</p>
+              </div>
+              <p class="text">{{=comment.message}}</p>
+              <a class="reply" href="">{{=it.reply}}</a>
+            </div>
+          </div>
+          {{~}}
+        </div>
+      </div>
+      <div class="bottom-section">
+        <!-- footer -->
+        <div>
+          {{#def._footer}}
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <script>
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<content>
+  <url>/contact</url>
+<messageUs>Deja tu mensaje</messageUs>
+<joinUs>Únete al Equipo</joinUs>
+<meetUs>o ven a conocernos</meetUs>
+<name>Nombre</name>
+<message>Mensaje</message>
+<phone>Numero Telefónico</phone>
+<position>¿En qué puesto estás interesado?</position>
+<pos1>Desarrollador Fullstack</pos1>
+<pos2>Desarrollador Junior</pos2>
+<pos3>Gerente de Proyecto</pos3>
+<pos4>Diseñador de UX/UI</pos4>
+<posOther>Otro</posOther>
+<positionSelect>Selecciona el puesto</positionSelect>
+<linkCV>Link a tu CV</linkCV>
+<attachCV>Adjunta tu CV</attachCV>
+<or>o</or>
+<linkPortfolio>Link a tu Portafolio / Reel</linkPortfolio>
+<bttnMessage>Enviar Mensaje</bttnMessage>
+<bttnApply>Aplicar</bttnApply>
+<phoneNo>Tel: 01 55 3020 3426</phoneNo>
+</content>

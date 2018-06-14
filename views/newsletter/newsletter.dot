@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  {{#def._head}}
+</head>
+
+<body class="newsletter">
+  <!-- header -->
+  <div>
+    {{#def._header}}
+  </div>
+  <div class="wrapper">
+    <div style="max-width: 1440px; margin: auto">
+      <div class="content">
+        <!-- newsletter content -->
+        <p class="title" id="resp-title">{{=it.mainTitle}}</p>
+        <div class="content__text">
+          <p class="title">{{=it.mainTitle}}</p>
+          <p class="subtitle">{{=it.subtitle}}</p>
+          <p class="text">{{=it.text}}</p>
+        </div>
+        <!-- responsive form -->
+        <div class="form-2">
+          <form class="form" action="#">
+            <input class="form__email" type="email" name="email" placeholder="email">
+            <input class="form__submit" type="submit" value="{{=it.i18n.subscribe}}">
+          </form>
+        </div>
+        <!-- imagen -->
+        <div class="content__image">
+          <img src="/img/newsletter/newsletter.png" style="max-width: 100%; height: auto;">
+        </div>
+      </div>
+
+      <!-- email form -->
+      <div class="form-1">
+        <form class="form" action="#">
+          <input class="form__email" type="email" name="email" placeholder="email">
+          <input class="form__submit" type="submit" value="{{=it.i18n.subscribe}}">
+        </form>
+      </div>
+
+
+
+      <!-- footer -->
+      <div style="margin-top: 15%">
+        {{#def._footer}}
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  {{#def._head}}
+</head>
+
+<body class="blog">
+  <!-- header -->
+  <div>
+    {{#def._header}}
+  </div>
+  <div class="wrapper">
+    <div class="wrapper__full">
+      <div class="top">
+        <div class="content">
+          <!-- imagen -->
+          <div class="content__image">
+            <img src="/img/blog/blog.png" style="max-width: 100%; height: auto;">
+          </div>
+          <!-- contenido -->
+          <div class="content__text">
+            <p class="title">{{=it.mainTitle}}</p>
+            <p class="text">{{=it.text}}</p>
+            <form class="form" action="#">
+              <input class="form__email" type="email" name="email" placeholder="email">
+              <input class="form__submit" type="submit" value="{{=it.i18n.subscribe}}">
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="background">
+        {{~it.data.entries :entry:index}} {{? index === 0}}
+        <div class="main">
+          <!-- responsive -->
+          <div class="tuerca-1" onclick="toggleCategories()">
+            <img src="/img/blog/tuerca1.png">
+          </div>
+          <!--  -->
+          <div class="main__news">
+            <div class="main__news--image">
+              <img src="{{=entry.image}}">
+            </div>
+            <div class="main__news--content">
+              <div class="tags">
+                <p style="color:#F16655">{{=entry.tag}}</p>
+                <p>{{=entry.date}}</p>
+              </div>
+              <p class="content-title">{{=entry.title}}</p>
+              <p class="content-snippet">{{=entry.snippet}}</p>
+              <a class="read-more" href="{{=entry.url}}">{{=it.read}}</a>
+            </div>
+          </div>
+          <div class="main__categories" id="categories">
+            <p class="categories-title">{{=it.categories}}</p>
+            <div class="categories-options">
+              <input type="checkbox" class="styled-checkbox" id="styled-checkbox-2" name="tag" value="News" onclick="ordena(checked,value)">
+              <label for="styled-checkbox-2">{{=it.news}}</label>
+              <br>
+              <input type="checkbox" class="styled-checkbox" id="styled-checkbox-2" name="tag" value="Technology" onclick="ordena(checked,value)">
+              <label for="styled-checkbox-2">{{=it.tech}}</label>
+              <br>
+              <input type="checkbox" class="styled-checkbox" id="styled-checkbox-2" name="tag" value="Health" onclick="ordena(checked,value)">
+              <label for="styled-checkbox-2">{{=it.health}}</label>
+              <br>
+              <input type="checkbox" class="styled-checkbox" id="styled-checkbox-2" name="tag" value="Fashion" onclick="ordena(checked,value)">
+              <label for="styled-checkbox-2">{{=it.fashion}}</label>
+              <br>
+              <input type="checkbox" class="styled-checkbox" id="styled-checkbox-2" name="tag" value="Daily Life" onclick="ordena(checked,value)">
+              <label for="styled-checkbox-2">{{=it.daily}}</label>
+            </div>
+            <hr class="dropdown-line">
+            <div class="tuerca-2" onclick="toggleCategories()">
+              <img src="/img/blog/tuerca2.png">
+            </div>
+          </div>
+        </div>
+
+        <div class="normal">
+          <div class="normal__news display-news">
+            <div class="normal__news--image">
+              <img src="{{=entry.image}}">
+            </div>
+            <div class="normal__news--content">
+              <div class="normal__news--content__tags">
+                <p class="Tag" style="color:#F16655">{{=entry.tag}}</p>
+                <p>{{=entry.date}}</p>
+              </div>
+              <p class="normal__news--content__title">{{=entry.title}}</p>
+              <a class="normal__news--content__read-more" href="{{=entry.url}}">{{=it.read}}</a>
+            </div>
+          </div>
+          {{??}}
+          <div class="normal__news">
+            <div class="normal__news--image">
+              <img src="{{=entry.image}}">
+            </div>
+            <div class="normal__news--content">
+              <div class="normal__news--content__tags">
+                <p class="Tag" style="color:#F16655">{{=entry.tag}}</p>
+                <p>{{=entry.date}}</p>
+              </div>
+              <p class="normal__news--content__title">{{=entry.title}}</p>
+              <a class="normal__news--content__read-more" href="{{=entry.url}}">{{=it.read}}</a>
+            </div>
+          </div>
+          {{?}} {{~}}
+        </div>
+        <div class="bottom-text">
+          <div class="load-more">
+            <a href="#" id="load">{{=it.load}}</a>
+          </div>
+          <div class="newsletter-mobile">
+            <p class="text">{{=it.text}}</p>
+            <form class="form" action="#">
+              <input class="form__email" type="email" name="email" placeholder="email">
+              <input class="form__submit" type="submit" value="{{=it.i18n.subscribe}}">
+            </form>
+          </div>
+        </div>
+
+        <!-- footer -->
+        <div>
+          {{#def._footer}}
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    /*Load more news*/
+    $(function() {
+      $(".normal__news").slice(0, 6).css("display", "flex"); /*select first 6  puse .css(x,y) en vez de .show() porq tiene q ser display flex, no block*/
+      $("#load").click(function(e) { /*click event for load more*/
+        e.preventDefault();
+        $(".normal__news:hidden").slice(0, 6).css("display", "flex"); /*select new 6, load them*/
+        if ($(".normal__news:hidden").length == 0) { /*if no more divs, alert user*/
+          alert("No more news");
+        }
+      });
+    });
+  </script>
+
+  <script>
+    function ordena(a, b) {
+      /*borro mis elementos*/
+      var news = document.getElementsByClassName("normal__news");
+      var z;
+
+      for (var z = 0; z < news.length; z++) {
+        var normal = document.getElementsByClassName("normal__news")[z];
+        normal.style.display = "none";
+      }
+      /*recorro categorias, si una esta seleccionada, en esa recorro mis news, despliego
+      solo las del tag correcto*/
+      var x = document.getElementsByClassName("categories-options")[0];
+      var check = x.getElementsByTagName('input');
+      var i;
+      var empty = true;
+
+      for (var i = 0; i < check.length; i++) {
+        if (check[i].checked) {
+          empty = false;
+          console.log(check[i].checked + ":" + check[i].value);
+          var normalNews = document.getElementsByClassName("normal__news");
+          var j;
+          for (var j = 0; j < normalNews.length; j++) {
+            var tag = document.getElementsByClassName("Tag")[j].innerHTML;
+            var x = document.getElementsByClassName("normal__news")[j];
+            /*si coincide con el tag, entonces se despliega*/
+            if (tag === check[i].value) {
+              console.log("tag: " + check[i].value);
+              x.style.display = "flex";
+            } else {
+
+            }
+          }
+        }
+      }
+      if (empty) {
+        for (var z = 0; z < news.length; z++) {
+          var normal = document.getElementsByClassName("normal__news")[z];
+          normal.style.display = "flex";
+        }
+      }
+    }
+
+    function toggleCategories() {
+      var x = document.getElementById("categories");
+      console.log(x);
+      if (x.className === "main__categories") {
+        x.className += " show";
+      } else {
+        x.className = "main__categories";
+      }
+    }
+  </script>
+
+</body>
+
+</html>

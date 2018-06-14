@@ -1,0 +1,209 @@
+<div class="header absolute">
+  <!-- logo arvolution -->
+  <!-- returns to home -->
+  <a class="logo" href="{{#def._setLan}}/">
+    <!-- imagen y logo arvolution -->
+    <img src="/img/header/LogoNew_b.png">
+    <p>ARVOLUTION</p>
+  </a>
+  <!-- links al resto de las paginas (con el _setLan) -->
+  <ul class="pages" id="myTopNav">
+    <li>
+      <a class="pages__text">
+        <p>{{=it.i18n.products}}</p>
+      </a>
+      <div class="dropdown-products">
+        <a class="lowercase" href="{{#def._setLan}}/digital">Arvolution + Digital</a>
+        <hr class="dropdown-line">
+        <a class="lowercase" href="{{#def._setLan}}/industry">Arvolution + Industry 4.0</a>
+        <hr class="dropdown-line">
+        <a class="lowercase" href="#">Arvolution + Training</a>
+      </div>
+    </li>
+    <li>
+      <a class="pages__text" href="{{#def._setLan}}/company">
+        <p>{{=it.i18n.company}}</p>
+      </a>
+    </li>
+    <li>
+      <a class="pages__text">
+        <p>{{=it.i18n.resources}}</p>
+      </a>
+      <div class="dropdown-resources">
+        <a class="lowercase" href="/blog">Blog</a>
+        <hr class="dropdown-line">
+        <a class="lowercase" href="#">Press</a>
+        <hr class="dropdown-line">
+        <a class="lowercase" href="/newsletter">Newsletter</a>
+      </div>
+    </li>
+    <li>
+      <a class="pages__text" >
+        <p>{{=it.i18n.contact}}</p>
+      </a>
+      <div class="dropdown-contact">
+        <a class="lowercase" href="{{#def._setLan}}/contact#to_message">Message us</a>
+        <hr class="dropdown-line">
+        <a class="lowercase" href="{{#def._setLan}}/contact#to_join">Join us</a>
+        <hr class="dropdown-line">
+        <a class="lowercase" href="{{#def._setLan}}/contact#to_meet">Meet us</a>
+      </div>
+    </li>
+    <li>
+      <img src="{{=it.i18n.flag}}">
+      <div class="dropdown-lang">
+        <a class="lowercase" href="{{=it.url}}" class="{{?it.i18n.lan=='en'}}active-lan{{?}}">
+          <img class="dropdown-img" src="/img/header/usa.png">
+        </a>
+        <hr class="dropdown-line">
+        <a class="lowercase" href="/es{{=it.url}}" class="{{?it.i18n.lan=='es'}}active-lan{{?}}">
+            <img class="dropdown-img" src="/img/header/mex.png">
+        </a>
+      </div>
+    </li>
+  </ul>
+  <div class="resp-bars" onclick="changeShape(this); toggleDropdown()">
+    <div class="resp-bars__bar1"></div>
+    <div class="resp-bars__bar2"></div>
+    <div class="resp-bars__bar3"></div>
+  </div>
+  <!-- MOBILE -->
+  <div class="mobile" id="mobile">
+    <ul>
+      <!-- products -->
+      <li>
+        <div class="mobile__block" onclick="dropdownP()">
+          <a class="mobile__text">
+            <p>{{=it.i18n.products}}</p>
+          </a>
+          <div>
+            <img class="" src="/img/header/arrow.png">
+          </div>
+        </div>
+        <div class="mobile__drop" id="dropdownP">
+          <a class="lowercase" href="{{#def._setLan}}/digital">Arvolution + Digital</a>
+          <hr class="dropdown-line">
+          <a class="lowercase" href="{{#def._setLan}}/industry">Arvolution + Industry 4.0</a>
+          <hr class="dropdown-line">
+          <a class="lowercase" href="#">Arvolution + Training</a>
+        </div>
+      </li>
+      <!-- company -->
+      <li>
+        <div class="mobile__block">
+          <a class="mobile__text" href="{{#def._setLan}}/company">
+            <p>{{=it.i18n.company}}</p>
+          </a>
+        </div>
+        <div class="mobile__static">
+        </div>
+      </li>
+      <!-- resources -->
+      <li>
+        <div class="mobile__block" onclick="dropdownR()">
+          <a class="mobile__text" href="#">
+            <p>{{=it.i18n.resources}}</p>
+          </a>
+          <div>
+            <img class="" src="/img/header/arrow.png">
+          </div>
+        </div>
+        <div class="mobile__drop" id="dropdownR">
+          <a class="lowercase" href="#">Blog</a>
+          <hr class="dropdown-line">
+          <a class="lowercase" href="#">Press</a>
+          <hr class="dropdown-line">
+          <a class="lowercase" href="/newsletter">Newsletter</a>
+        </div>
+      </li>
+      <!-- contact -->
+      <li>
+        <div class="mobile__block" onclick="dropdownC()">
+          <a class="mobile__text">
+            <p>{{=it.i18n.contact}}</p>
+          </a>
+          <div>
+            <img class="" src="/img/header/arrow.png">
+          </div>
+        </div>
+        <div class="mobile__drop" id="dropdownC">
+          <a class="lowercase" href="{{#def._setLan}}/contact#to_message">Message us</a>
+          <hr class="dropdown-line">
+          <a class="lowercase" href="{{#def._setLan}}/contact#to_join">Join us</a>
+          <hr class="dropdown-line">
+          <a class="lowercase" href="{{#def._setLan}}/contact#to_meet">Meet us</a>
+        </div>
+      </li>
+      <!-- language -->
+      <li>
+        <div class="mobile__block" onclick="dropdownI()">
+          <img src="{{=it.i18n.flag}}">
+          <div>
+            <img class="" src="/img/header/arrow.png">
+          </div>
+        </div>
+        <div class="mobile__drop-lang" id="dropdownI">
+          <a class="lowercase" href="{{=it.url}}" class="{{?it.i18n.lan=='en'}}active-lan{{?}}">
+            <img src="/img/header/usa.png">
+          </a>
+          <hr class="dropdown-line">
+          <a class="lowercase" href="/es{{=it.url}}" class="{{?it.i18n.lan=='es'}}active-lan{{?}}">
+              <img src="/img/header/mex.png">
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  function changeShape(x) {
+    x.classList.toggle("change");
+  }
+
+  function toggleDropdown() {
+    var x = document.getElementById("mobile");
+    if (x.className === "mobile") {
+      x.className += " show";
+    } else {
+      x.className = "mobile";
+    }
+  }
+
+  function dropdownP() {
+    var x = document.getElementById("dropdownP");
+    if (x.className === "mobile__drop") {
+      x.className += " open";
+    } else {
+      x.className = "mobile__drop";
+    }
+  }
+
+  function dropdownR() {
+    var x = document.getElementById("dropdownR");
+    if (x.className === "mobile__drop") {
+      x.className += " open";
+    } else {
+      x.className = "mobile__drop";
+    }
+  }
+
+  function dropdownC() {
+    var x = document.getElementById("dropdownC");
+    if (x.className === "mobile__drop") {
+      x.className += " open";
+    } else {
+      x.className = "mobile__drop";
+    }
+  }
+
+  function dropdownI() {
+    var x = document.getElementById("dropdownI");
+    if (x.className === "mobile__drop-lang") {
+      x.className += " open";
+    } else {
+      x.className = "mobile__drop-lang";
+    }
+  }
+
+</script>

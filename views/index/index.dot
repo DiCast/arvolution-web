@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  {{#def._head}}
+</head>
+
+<body class="index">
+  <!-- header -->
+  <div>
+    {{#def._header}}
+  </div>
+  <div class="wrapper">
+    <div style="max-width: 1440px; margin: auto">
+      <!-- main display -->
+      <div class="main-display-full">
+        <div class="main-display-reg">
+          <div class="main-display-reg__floor">
+            <img src="/img/index/gradient_1.png" style="">
+          </div>
+          <div class="main-display-reg__image">
+            <img src="/img/index/iphone3Full.png" style="">
+          </div>
+        </div>
+      </div>
+      <!-- company description -->
+      <div class="company-description">
+        <div class="company-description__image">
+          <img src="/img/index/compuMac.png" style="max-width: 100%; height: auto;">
+        </div>
+        <div class="company-description__content">
+          <p class="title">{{=it.mainTitle}}<br>{{=it.mainTitleTwo}}</p>
+          <p class="text">{{=it.arvrText}}</p>
+        </div>
+        <!-- video RESPONSIVE (oculto) -->
+        <div class="company-description__video-resp">
+          <video width="100%" controls>
+            <source src="/vid/vid-demo.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <!-- products -->
+      <div class="products">
+        <div class="products--floor">
+          <img class="products--floor__image" src="/img/index/gradient_2.png" style="">
+        </div>
+        <!-- training -->
+        <div class="products--training">
+          <div class="products--training__image">
+            <img src="/img/index/training.png" style="max-width: 90%; height: auto;">
+          </div>
+        </div>
+        <!-- industry -->
+        <div class="products--industry">
+          <div class="products--industry__image">
+            <img src="/img/index/industry.png" style="max-width: 90%; height: auto;">
+          </div>
+        </div>
+        <!-- digital -->
+        <div class="products--digital">
+          <div class="products--digital__image">
+            <img src="/img/index/digital.png" style="max-width: 90%; height: auto;">
+          </div>
+        </div>
+        <!-- content products -->
+        <div class="products--contents">
+          <div class="content__products">
+            <p class="title">{{=it.productsTitle}}</p>
+            <p class="text">{{=it.productsText}}</p>
+          </div>
+          <div class="content__training">
+            <p class="title">{{=it.trainingTitle}}</p>
+            <p class="text">{{=it.trainingText}}</p>
+          </div>
+          <div class="content__industry">
+            <p class="title">{{=it.industryTitle}}</p>
+            <p class="text">{{=it.industryText}}</p>
+          </div>
+          <div class="content__digital">
+            <p class="title">{{=it.digitalTitle}}</p>
+            <p class="text">{{=it.digitalText}}</p>
+          </div>
+        </div>
+        <!-- carousel responsive -->
+        <div class="products--carousel" ontouchend="hideContent()" onmousemove="hideContent()">
+          <div ondrag="alert('prueba')" class="carousel" data-flickity='{ "imagesLoaded": true, "percentPosition": false, "initialIndex": 1 }'>
+            <div>
+              <img src="/img/index/training.png">
+              <div class="carousel__content">
+                <p class="title">{{=it.trainingTitle}}</p>
+                <p class="text">{{=it.trainingText}}</p>
+                <a href="" class="button">{{=it.buttonText}}</a>
+              </div>
+            </div>
+            <div>
+              <img src="/img/index/industry.png">
+              <div style="height: 200px">
+                <div class="default carousel__content">
+                  <p class="title">{{=it.industryTitle}}</p>
+                  <p class="text">{{=it.industryText}}</p>
+                  <a href="" class="button">{{=it.buttonText}}</a>
+                </div>
+              </div>
+
+            </div>
+            <div>
+              <img src="/img/index/digital.png">
+              <div class="carousel__content">
+                <p class="title">{{=it.digitalTitle}}</p>
+                <p class="text">{{=it.digitalText}}</p>
+                <a href="" class="button">{{=it.buttonText}}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- clientes -->
+      <div class="clients">
+        <div class="clients--title">
+          <p class="title">{{=it.clientsTitle}}</p>
+        </div>
+        <ul class="logos">
+          <li class="logos__image">
+            <img src="/img/index/bimbo.png" style="max-width: 80%">
+          </li>
+          <li class="logos__image">
+            <img src="/img/index/nestle.png" style="max-width: 80%">
+          </li>
+          <li class="logos__image">
+            <img src="/img/index/cocacola.png" style="max-width: 80%">
+          </li>
+        </ul>
+        <!-- carousel -->
+        <div class="clients--carousel">
+          <div class="carousel" data-flickity='{ "imagesLoaded": true, "percentPosition": false, "initialIndex": 1 }'>
+            <img src="/img/index/bimbo.png">
+            <img src="/img/index/nestle.png">
+            <img src="/img/index/cocacola.png">
+          </div>
+        </div>
+      </div>
+
+      <!-- footer -->
+      <div style="margin-top: 15%">
+        {{#def._footer}}
+      </div>
+    </div>
+  </div>
+
+  <!-- FLICKITY CAROUSEL  -->
+  <script src="/flickity-docs/flickity.pkgd.min.js"></script>
+
+  <script>
+    $(document).ready(function() {
+      $(".products--training__image").hover(function() {
+        $(".content__training").css("display", "block");
+        $(".content__products").css("display", "none");
+
+      }, function() {
+        $(".content__training").css("display", "none");
+        $(".content__products").css("display", "block");
+      });
+      $(".products--industry__image").hover(function() {
+        $(".content__industry").css("display", "block");
+        $(".content__products").css("display", "none");
+      }, function() {
+        $(".content__industry").css("display", "none");
+        $(".content__products").css("display", "block");
+      });
+      $(".products--digital__image").hover(function() {
+        $(".content__digital").css("display", "block");
+        $(".content__products").css("display", "none");
+      }, function() {
+        $(".content__digital").css("display", "none");
+        $(".content__products").css("display", "block");
+      });
+    });
+
+    function hideContent() {
+      var c = document.getElementsByClassName("flickity-slider")[0].childNodes;
+      var i;
+      for (i = 0; i < c.length; i++) {
+        if (c[i].className === "is-selected") {
+          /*c[i].getElementsByClassName("carousel__content")[0].style.display = "block"; */
+          c[i].getElementsByClassName("carousel__content")[0].style.visibility = "visible";
+          c[i].getElementsByClassName("carousel__content")[0].style.opacity = "1";
+
+          console.log("Hello world!");
+        } else {
+          /*c[i].getElementsByClassName("carousel__content")[0].style.display = "none";*/
+          c[i].getElementsByClassName("carousel__content")[0].style.visibility = "hidden";
+          c[i].getElementsByClassName("carousel__content")[0].style.opacity = "0";
+          c[i].getElementsByClassName("carousel__content")[0].style.transition = "visibility 0s, opacity 0.2s ease-in";
+
+          console.log("bye world!");
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>
