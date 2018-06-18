@@ -2,4 +2,13 @@
   <url>/blog-entry</url>
   <blog>Blog</blog>
   <reply>Responder</reply>
+  <load>Cargar Más</load>
+  <read>Leer más</read>
+  <relPosts>Posts Relacionados</relPosts>
+  <leaveComment>Deja un Comentario</leaveComment>
+  <yourComment>Escribe tu comentario...</yourComment>
+  <name>Nombre (Requerido)</name>
+  <email>Email (Requerido)</email>
+  <website>Página Web</website>
+  <post>comentar</post>
 </content>

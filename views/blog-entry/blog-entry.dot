@@ -47,15 +47,15 @@
           </p>
         </div>
         <div class="write-comment">
-          <p class="write-comment__title">Leave a Comment</p>
+          <p class="write-comment__title">{{=it.leaveComment}}</p>
           <form action="" method="post" class="write-comment__form">
-            <textarea class="text" name="comment" form="usrform" placeholder="Enter your comment..."></textarea></br>
+            <textarea class="text" name="comment" form="usrform" placeholder="{{=it.yourComment}}"></textarea></br>
             <div class="form-inputs">
-              <input class="text" type="text" name="usrname" placeholder="Name (Required)">
-              <input class="text" id="emailAddress" type="email" placeholder="Email (Required)">
-              <input class="text" id="website" type="url" placeholder="Website">
+              <input class="text" type="text" name="usrname" placeholder="{{=it.name}}">
+              <input class="text" id="emailAddress" type="email" placeholder="{{=it.email}}">
+              <input class="text" id="website" type="url" placeholder="{{=it.website}}">
             </div>
-            <input class="post-bttn" type="submit" value="post">
+            <input class="post-bttn" type="submit" value="{{=it.post}}">
           </form>
         </div>
         <div class="comments">
@@ -74,9 +74,34 @@
             </div>
           </div>
           {{~}}
+          <div class="show-more">
+            <a href="#" id="load">{{=it.load}}</a>
+          </div>
         </div>
       </div>
       <div class="bottom-section">
+        <p class="bottom-section__title">{{=it.relPosts}}</p>
+        <!-- Related posts -->
+        <div class="post-carousel">
+          <div class="carousel" data-flickity='{ "imagesLoaded": true, "percentPosition": false, "initialIndex": 1 }'>
+            <!-- display solo si el tag coincide con el de la noticia (en este caso, "news" ó "Health" es solo de ejemplo) -->
+            {{~it.data.relatedPosts :post}} {{? post.tag === "News" || post.tag === "Health" }}
+            <div class="news">
+              <div class="news--image">
+                <img src="{{=post.image}}">
+              </div>
+              <div class="news--content">
+                <div class="news--content__tags">
+                  <p class="post-tag">{{=post.tag}}</p>
+                  <p>{{=post.date}}</p>
+                </div>
+                <p class="news--content__title">{{=post.title}}</p>
+                <a class="news--content__read-more" href="{{=post.url}}">{{=it.read}}</a>
+              </div>
+            </div>
+            {{?}} {{~}}
+          </div>
+        </div>
         <!-- footer -->
         <div>
           {{#def._footer}}
@@ -86,8 +111,20 @@
 
   </div>
 
+  <script src="/flickity-docs/flickity.pkgd.min.js"></script>
 
   <script>
+    /*Load more news*/
+    $(function() {
+      $(".comment").slice(0, 2).css("display", "flex"); /*select first 6  puse .css(x,y) en vez de .show() porq tiene q ser display flex, no block*/
+      $("#load").click(function(e) { /*click event for load more*/
+        e.preventDefault();
+        $(".comment:hidden").slice(0, 2).css("display", "flex"); /*select new 2, load them*/
+        if ($(".comment:hidden").length == 0) { /*if no more divs, alert user*/
+          alert("You have reached the end of comments.");
+        }
+      });
+    });
   </script>
 
 </body>

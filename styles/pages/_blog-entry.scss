@@ -23,6 +23,7 @@
     font-size: 30px;
     text-shadow: 0 2px 4px rgba(0,0,0,0.50);
     margin-bottom: 30px;
+    margin-right: 10px;
   }
 
   .text {
@@ -41,6 +42,7 @@
     font-weight: 200; //Light
     font-size: 16px;
     color: #FFFFFF;
+    text-align: center;
 
     span {
       font-weight: 300;
@@ -52,6 +54,7 @@
     font-weight: 200; //Light
     font-size: 14px;
     color: #FFFFFF;
+    text-align: center;
   }
 
   .top-section {
@@ -70,13 +73,26 @@
   }
 
   .bottom-section {
+    display: flex;
+    flex-direction: column;
     background: #E3EEF6;
+
+    &__title {
+      font-family: "Work Sans";
+      font-weight: 300; //Light
+      font-size: 26px;
+      color: #646464;
+      margin: 40px 0 20px;
+      align-self: center;
+    }
   }
 
   .heading {
     display: flex;
     justify-content: space-between;
-    margin: -25% 10% 0;
+    margin: 0 10%;
+    position: relative;
+    top: -350px;
 
     &--text {
       max-width: 40%;
@@ -96,6 +112,7 @@
           border-radius: 150px;
           border: 5px solid #FFFFFF;
           width: 75%;
+          min-width: 80px;
         }
       }
     }
@@ -118,7 +135,9 @@
   }
 
   .blog-text {
-    margin: 60px 150px;
+    margin: -300px 0 60px;
+    width: 80%;
+    align-self: center;
   }
 
   .write-comment {
@@ -133,6 +152,11 @@
       font-size: 18px;
       color: #646464;
       text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    form {
+      margin: 0 20px;
     }
 
     textarea {
@@ -182,21 +206,22 @@
       background: #B0C2D0;
     }
 
-    .submit:hover {
-      background-image: linear-gradient(-90deg, #FA7065 0%, #FE8F6E 100%);
+    .post-bttn:hover {
+      background: #BFCED9;
     }
 
-    .submit:active {
-      background-image: linear-gradient(-90deg, #E75347 0%, #F3805E 100%);
+    .post-bttn:active {
+      background: #9BB0C1;
     }
   }
 
   .comments {
-    margin: 3% 28%;
+    width: 45%;
+    align-self: center;
   }
 
   .comment {
-    display: flex;
+    display: none;
     justify-content: space-between;
     margin: 30px 0;
 
@@ -226,6 +251,7 @@
       &--title {
         display: flex;
         justify-content: space-between;
+
         p {
           color: #00949D;
           font-family: "Work Sans";
@@ -251,13 +277,215 @@
       }
     }
   }
-  @media screen and (max-width: 970px) {
-    .heading {
-      &__news {
-        width: 100%;
-        margin-right: 0;
+
+  .show-more {
+    align-self: center;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+
+    a {
+      text-decoration: none;
+      font-family: "Work Sans";
+      font-weight: 400; //Light
+      font-size: 16px;
+      color: #646464;
+      line-height: 20px;
+      align-self: center;
+    }
+  }
+
+  .news {
+    flex-direction: column;
+    display: flex;
+    width: 300px;
+    height: 320px;
+    margin: 40px 30px;
+    background: #FFFFFF;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+
+    &--image {
+      width: 90%;
+      height: 80%;
+      background: #A5A5A5;
+      overflow: hidden;
+      border-radius: 13px;
+      margin-top: -20px;
+      display: flex;
+      justify-content: center;
+      align-self: center;
+
+      img {
+        max-height: 110%;
+        align-self: center;
+      }
+    }
+
+    &--content {
+      padding: 15px 30px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      &__tags {
+        display: flex;
+
+        p {
+          padding: 0 10px 0 0;
+          font-family: "Work Sans";
+          font-weight: 300; //Light
+          font-size: 12px;
+          color: black;
+        }
+
+        .post-tag {
+          color: #F16655;
+        }
+      }
+
+      &__title {
+        font-family: "Work Sans";
+        font-weight: 300; //Light
+        font-size: 16px;
+        color: black;
+        margin: 7% 0 5%;
+      }
+
+      &__read-more {
+        font-family: "Work Sans";
+        font-weight: 300; //Light
+        font-size: 12px;
+        color: #479D9D;
+        text-decoration: none;
+        text-transform: uppercase;
+        align-self: flex-end;
+        // margin-top: 10%;
       }
     }
   }
-  @media screen and (max-width: 700px) {}
+  // CAROUSEL FLICKITY
+  .post-carousel {
+    display: block;
+    margin-bottom: 100px;
+    /* big buttons, no circle */
+    .flickity-prev-next-button {
+      // display: none;
+      width: 50px;
+      height: 50px;
+      background: transparent;
+      //arrow color
+      .arrow {
+        fill: white;
+      }
+    }
+    /* hide disabled button */
+    .flickity-prev-next-button:disabled {
+      display: none;
+    }
+    /* position dots in gallery */
+    .flickity-page-dots {
+      bottom: -40px;
+      // white circles
+      .dot {
+        width: 8px;
+        height: 8px;
+        opacity: 1;
+        background: transparent;
+        border: 2px solid white;
+      }
+
+      .dot.is-selected {
+        background: white;
+      }
+    }
+  }
+  @media screen and (max-width: 736px) {
+    .title {
+      font-size: 26px;
+    }
+
+    .comments {
+      width: 80%;
+    }
+  }
+  @media screen and (max-width: 490px) {
+    .top-section {
+      background-image: linear-gradient(-180deg, rgba(12,105,140,0.00) 0%, #106D90 96%), url("/img/blog-entry/imagen-muestra.png");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+    }
+
+    .title {
+      text-align: center;
+    }
+
+    .author {
+      color: #000000;
+    }
+
+    .date {
+      color: #000000;
+    }
+
+    .heading {
+      top: -150px;
+
+      &--image {
+        display: none;
+      }
+
+      &--text {
+        max-width: 100%;
+        align-items: center;
+
+        .author-content {
+          img {
+            border: 7px solid #FFFFFF;
+          }
+        }
+      }
+    }
+
+    .blog-text {
+      margin-top: -200px;
+    }
+
+    .write-comment {
+      form {
+        width: 80%;
+      }
+
+      .form-inputs {
+        flex-direction: column;
+
+        input[type=email],
+        input[type=text],
+        input[type=url] {
+          width: 100%;
+        }
+      }
+    }
+
+    .news {
+      width: 260px;
+      height: 280px;
+
+      &--content {
+        &__title {
+          font-size: 14px;
+        }
+
+        &__tags {
+          p {
+            font-size: 10px;
+          }
+        }
+      }
+    }
+
+    .flickity-prev-next-button {
+      display: none;
+    }
+  }
 }
